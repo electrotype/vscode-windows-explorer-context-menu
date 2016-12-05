@@ -41,7 +41,7 @@ actually called in the code.
 
 ![](https://github.com/electrotype/vscode-windows-explorer-context-menu/blob/master/images/cm1.png)
 
-==>
+#==>
 
 ![](https://github.com/electrotype/vscode-windows-explorer-context-menu/blob/master/images/cm2.png)
 
