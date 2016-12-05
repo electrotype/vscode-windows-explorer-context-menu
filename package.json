@@ -31,7 +31,13 @@
                     "command": "extension.windowsExplorerContextMenu",
                     "group": "navigation@1"
                 }
-            ]
+            ], 
+			"editor/context" : [
+				{
+                    "command": "extension.windowsExplorerContextMenu",
+                    "group": "navigation@1"
+				}
+			]
         }
 	},
 	"devDependencies": {
