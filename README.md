@@ -1,6 +1,6 @@
-# Windows Explorer Context Menu
+# VSCode - Windows Explorer Context Menu
 
-VSCode extension that opens the Windows Explorer Context Menu.
+Visual Studio Code extension that opens the Windows Explorer Context Menu.
 It is triggered by the *"Windows Explorer Context Menu"* option in the 
 context menu of files and folders from the *Explorer* pane.
 
