@@ -22,7 +22,7 @@
 		"commands": [
 			{
 				"command": "extension.windowsExplorerContextMenu",
-				"title": "◉ Windows Explorer Context Menu"
+				"title": "★ Windows Explorer Context Menu"
 			}
 		],
         "menus": {
