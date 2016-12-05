@@ -23,7 +23,7 @@ function activate(context) {
         //vscode.window.showErrorMessage(filePath);
 
         const execFile = require('child_process').execFile;
-        const bat = execFile(__dirname + '\\Context.exe',
+        const bat = execFile(__dirname + '\\open.exe',
             [filePath], (error, stdout, stderr) => {});
 	});
 	
