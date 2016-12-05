@@ -1,0 +1,39 @@
+{
+	"name": "windows-explorer-context-menu",
+	"displayName": "Windows Explorer Context Menu",
+	"description": "Open Windows Explorer Context Menu on files and folders.",
+	"version": "1.0.0",
+	"publisher": "electrotype",
+	"icon": "images/windows.png",
+	"engines": {
+		"vscode": "^0.10.1"
+	},
+	"categories": [
+		"Other"
+	],
+	"keywords": [
+	],
+	"activationEvents": [
+		"onCommand:extension.windowsContextMenu"
+	],
+	"main": "./extension",
+	"contributes": {
+		"commands": [
+			{
+				"command": "extension.windowsContextMenu",
+				"title": "Windows Explorer Context Menu"
+			}
+		],
+        "menus": {
+            "explorer/context": [
+                {
+                    "command": "extension.windowsContextMenu",
+                    "group": "navigation@1"
+                }
+            ]
+        }
+	},
+	"devDependencies": {
+		"vscode": "0.10.x"
+	}
+}
