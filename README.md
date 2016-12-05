@@ -8,7 +8,7 @@ Of course it only work on Windows.
 
 ## Installation
 
-Clone the repository or download and extract the *.zip* file in your
+Clone the repository or download and extract the [.zip file](https://github.com/electrotype/vscode-windows-explorer-context-menu/archive/master.zip) in your
 *"%USERPROFILE%\.vscode\extensions"* folder. Restart VSCode.
 
 I may publish this extension in the [VSCode Marketplace](https://marketplace.visualstudio.com/VSCode),

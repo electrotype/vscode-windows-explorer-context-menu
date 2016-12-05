@@ -11,23 +11,24 @@
 	"categories": [
 		"Other"
 	],
+	"homepage": "https://github.com/electrotype/vscode-windows-explorer-context-menu",
 	"keywords": [
 	],
 	"activationEvents": [
-		"onCommand:extension.windowsContextMenu"
+		"onCommand:extension.windowsExplorerContextMenu"
 	],
 	"main": "./extension",
 	"contributes": {
 		"commands": [
 			{
-				"command": "extension.windowsContextMenu",
+				"command": "extension.windowsExplorerContextMenu",
 				"title": "Windows Explorer Context Menu"
 			}
 		],
         "menus": {
             "explorer/context": [
                 {
-                    "command": "extension.windowsContextMenu",
+                    "command": "extension.windowsExplorerContextMenu",
                     "group": "navigation@1"
                 }
             ]

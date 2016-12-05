@@ -9,7 +9,7 @@ function activate(context) {
 	// The command has been defined in the package.json file
 	// Now provide the implementation of the command with  registerCommand
 	// The commandId parameter must match the command field in package.json
-	var disposable = vscode.commands.registerCommand('extension.windowsContextMenu', function (filePath) {
+	var disposable = vscode.commands.registerCommand('extension.windowsExplorerContextMenu', function (filePath) {
 
         if(!filePath) {
             filePath = vscode.workspace.rootPath;
