@@ -2,8 +2,10 @@
 // Import the module and reference it with the alias vscode in your code below
 var vscode = require('vscode');
 
-function openContextMenu(filePath) {
+function openContextMenu(filePath, allowRoot) {
 
+        //vscode.window.showErrorMessage("filepath : " + filePath);
+        
         if(!filePath) {
             return;
         }
@@ -14,9 +16,11 @@ function openContextMenu(filePath) {
         }
         filePath = filePath.replace(/%3A/g, ':');
         filePath = filePath.replace(/\//g, '\\');
-        //filePath = '"' + filePath + '"';
-        //vscode.window.showErrorMessage(filePath);
 
+        if(!allowRoot && filePath === vscode.workspace.rootPath) {
+            return;
+        }
+   
         var config = vscode.workspace.getConfiguration('windowsExplorerContextMenu');
         var exeName = config.executable;
         if(!exeName) {
@@ -36,22 +40,17 @@ function activate(context) {
 	var disposable = vscode.commands.registerCommand('extension.windowsExplorerContextMenuCurrent', function (filePath) {
         openContextMenu(filePath);
 	});
-	context.subscriptions.push(disposable);
+	context.subscriptions.push(disposable, false);
 
     // Open context menu on selected file/folder
 	disposable = vscode.commands.registerCommand('extension.windowsExplorerContextMenu', function (filePath) {
-
-        if(!filePath) {
-            return;
-        }
-
-        openContextMenu(filePath);
+        openContextMenu(filePath, false);
 	});
 	context.subscriptions.push(disposable);
 
     // Open context menu on root folder
 	disposable = vscode.commands.registerCommand('extension.windowsExplorerContextMenuRoot', function (filePath) {
-        openContextMenu(vscode.workspace.rootPath);
+        openContextMenu(vscode.workspace.rootPath, true);
 	});
 	context.subscriptions.push(disposable); 
 
