@@ -13,12 +13,14 @@ function openContextMenu(filePath) {
             filePath = filePath.substring("file:///".length);
         }
         filePath = filePath.replace(/%3A/g, ':');
+        filePath = filePath.replace(/\//g, '\\');
+        //filePath = '"' + filePath + '"';
         //vscode.window.showErrorMessage(filePath);
 
         var config = vscode.workspace.getConfiguration('windowsExplorerContextMenu');
         var exeName = config.executable;
         if(!exeName) {
-            exeName = "WinContextMenu_x86.exe";
+            exeName = "AutohotkeyContextMenu.exe";
         }
 
         const execFile = require('child_process').execFile;

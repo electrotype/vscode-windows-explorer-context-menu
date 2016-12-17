@@ -15,18 +15,32 @@ Finally, in the context menu of the `Editor` panel, a simple *"☰ Context Menu"
 Clone the repository or download and extract the [.zip file](https://github.com/electrotype/vscode-windows-explorer-context-menu/archive/master.zip) to your
 *"%USERPROFILE%\.vscode\extensions"* folder. Restart VSCode.
 
-By default `WinContextMenu_x86.exe` is used as the executable to open the context menu. It seems to be
-the most reliable open source utility to do this. The drawback is that it always open the context menu near the *top-left*
-of the screen. The `Context.exe` utility opens the menu near the cursor, which is great, but some options on the open menu 
-seem to be problematic, such as "Properties".
+There are three executables that can be used to actually open the native context menu. They all have their
+drawbacks and that's why we bundle all of them and let you configure which one to use.
 
-You can change the active executable using the "*`windowsExplorerContextMenu.executable`*" [user setting](https://code.visualstudio.com/Docs/customization/userandworkspace). 
-The valid values for this configuration are currently "`WinContextMenu_x86.exe`" (the default) or "`Context.exe`".
+- *`AutohotkeyContextMenu.exe`* - Is the default. The *"Properties"* option of the open menu doesn't seem to work.
+
+- *`Context.exe`* - The *"Properties"* option of the open menu doesn't seem to work.
+
+- *`WinContextMenu_x86.exe`* - The menu doesn't open where the cursor is but at the *top-left* corner of the screen. If you use
+more than one monitor, it can even open on the wrong monitor.
+
+## Configuration
+You can change the active executable using the "*`windowsExplorerContextMenu.executable`*" [user setting](https://code.visualstudio.com/Docs/customization/userandworkspace).  
+The valid values for this configuration are currently "`AutohotkeyContextMenu.exe`" (the default), "`WinContextMenu_x86.exe`" or "`Context.exe`".
 
 Of course this extension only works on Windows.
 
 I may publish it to the [VSCode Marketplace](https://marketplace.visualstudio.com/VSCode)
 one day, but I first want to test it for a while. Please feel free to report any problem.
+
+----------------------
+
+## AutohotkeyContextMenu.exe
+
+Created using [Autohotkey](https://autohotkey.com) and [this script](https://autohotkey.com/board/topic/89281-ahk-l-shell-context-menu/).
+
+The source is provided in file *`executables/AutohotkeyContextMenu.ahk`*.
 
 ----------------------
 
@@ -44,7 +58,6 @@ one day, but I first want to test it for a while. Please feel free to report any
 
 (c) 2013 vkalviss
 
-----------------------
 
 
 ![](https://github.com/electrotype/vscode-windows-explorer-context-menu/blob/master/images/cm1.png)
