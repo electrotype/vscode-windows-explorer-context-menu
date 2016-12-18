@@ -1,6 +1,7 @@
 # VSCode - Windows Explorer Context Menu
 
-Visual Studio Code extension that opens the Windows Explorer context menu. You can use it for many things, one of them being 
+Visual Studio Code extension that opens the Windows Explorer context menu (also called "*shell context menu*").  
+You can use it for many things, one of them being 
 to manage your projects using [TortoiseGit](https://tortoisegit.org/) or [TortoiseSVN](https://tortoisesvn.net/).
 
 The extension adds some options to VSCode's context menu. In the `Explorer` panel, two options are added :
@@ -16,7 +17,7 @@ Clone the repository or download and extract the [.zip file](https://github.com/
 *"%USERPROFILE%\.vscode\extensions"* folder. Restart VSCode.
 
 There are three executables that can be used to actually open the native context menu. They all have their
-drawbacks and that's why we bundle all of them and let you configure which one to use.
+drawbacks and that's why we bundle all of them and let you choose which one to use.
 
 - *`AutohotkeyContextMenu.exe`* - Is the default. The *"Properties"* option of the open menu doesn't seem to work.
 
@@ -58,7 +59,7 @@ The source is provided in file *`executables/AutohotkeyContextMenu.ahk`*.
 
 (c) 2013 vkalviss
 
-
+----------------------
 
 ![](https://github.com/electrotype/vscode-windows-explorer-context-menu/blob/master/images/cm1.png)
 
