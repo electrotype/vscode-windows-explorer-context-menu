@@ -21,8 +21,7 @@
 		"menu",
 		"context menu",
 		"shell",
-		"TortoiseGit",
-		"TortoiseSVN"
+		"TortoiseGit"
 	],
 	"activationEvents": [
 		"onCommand:extension.windowsExplorerContextMenuCurrent",
