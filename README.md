@@ -11,10 +11,9 @@ The extension adds some options to VSCode's context menu. In the `Explorer` pane
 
 Finally, in the context menu of the `Editor` panel, a simple *"☰ Context Menu"* option is added for the file currently open.
 
-## Installation
+Of course this extension only works on Windows.
 
-Clone the repository or download and extract the [.zip file](https://github.com/electrotype/vscode-windows-explorer-context-menu/archive/master.zip) to your
-*"%USERPROFILE%\.vscode\extensions"* folder. Restart VSCode.
+## Configuration
 
 There are three executables that can be used to actually open the native context menu. They all have their
 drawbacks and that's why we bundle all of them and let you choose which one to use.
@@ -26,11 +25,8 @@ drawbacks and that's why we bundle all of them and let you choose which one to u
 - *`WinContextMenu_x86.exe`* - The menu doesn't open where the cursor is but at the *top-left* corner of the screen. If you use
 more than one monitor, it can even open on the wrong monitor.
 
-## Configuration
 You can change the active executable using the "*`windowsExplorerContextMenu.executable`*" [user setting](https://code.visualstudio.com/Docs/customization/userandworkspace).  
 The valid values for this configuration are currently "`AutohotkeyContextMenu.exe`" (the default), "`WinContextMenu_x86.exe`" or "`Context.exe`".
-
-Of course this extension only works on Windows.
 
 ----------------------
 
@@ -58,10 +54,10 @@ The source is provided in file *`executables/AutohotkeyContextMenu.ahk`*.
 
 ----------------------
 
-![](https://github.com/electrotype/vscode-windows-explorer-context-menu/blob/master/images/cm1.png)
+![](https://raw.githubusercontent.com/electrotype/vscode-windows-explorer-context-menu/master/images/cm1.png)
 
 #==>
 
-![](https://github.com/electrotype/vscode-windows-explorer-context-menu/blob/master/images/cm2.png)
+![](https://raw.githubusercontent.com/electrotype/vscode-windows-explorer-context-menu/master/images/cm2.png)
 
 

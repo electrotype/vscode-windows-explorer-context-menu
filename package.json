@@ -2,7 +2,7 @@
 	"name": "windows-explorer-context-menu",
 	"displayName": "Windows Explorer Context Menu",
 	"description": "Open Windows Explorer Context Menu on files and folders.",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"publisher": "electrotype",
 	"icon": "images/windows.png",
 	"engines": {
@@ -11,9 +11,12 @@
 	"categories": [
 		"Other"
 	],
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/electrotype/vscode-windows-explorer-context-menu"
+	},
 	"homepage": "https://github.com/electrotype/vscode-windows-explorer-context-menu",
-	"keywords": [
-	],
+	"keywords": [],
 	"activationEvents": [
 		"onCommand:extension.windowsExplorerContextMenuCurrent",
 		"onCommand:extension.windowsExplorerContextMenu",
@@ -36,29 +39,31 @@
 			}
 		],
 		"menus": {
-            "explorer/context": [
-                {
-                    "command": "extension.windowsExplorerContextMenu",
-                    "group": "navigation@1"
-                },
-                {
-                    "command": "extension.windowsExplorerContextMenuRoot",
-                    "group": "navigation@2"
-                }
-            ], 
-			"editor/context" : [
+			"explorer/context": [
 				{
-                    "command": "extension.windowsExplorerContextMenuCurrent",
-                    "group": "navigation@1"
+					"command": "extension.windowsExplorerContextMenu",
+					"group": "navigation@1"
+				},
+				{
+					"command": "extension.windowsExplorerContextMenuRoot",
+					"group": "navigation@2"
+				}
+			],
+			"editor/context": [
+				{
+					"command": "extension.windowsExplorerContextMenuCurrent",
+					"group": "navigation@1"
 				}
 			]
-        },
+		},
 		"configuration": {
 			"type": "object",
 			"title": "Windows Explorer Context Menu configuration",
 			"properties": {
 				"windowsExplorerContextMenu.executable": {
-					"type": ["string"],
+					"type": [
+						"string"
+					],
 					"default": null,
 					"description": "The executable to use to open the context menu. Can be 'WinContextMenu_x86.exe' (default) or 'Context.exe'."
 				}
