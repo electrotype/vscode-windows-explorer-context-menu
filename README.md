@@ -1,10 +1,13 @@
 # VSCode - Windows Explorer Context Menu
 
-Visual Studio Code extension that opens the Windows Explorer context menu (also called "*shell context menu*").  
-You can use it for many things, one of them being 
-to manage your projects using [TortoiseGit](https://tortoisegit.org/) or [TortoiseSVN](https://tortoisesvn.net/).
 
-The extension adds some options to VSCode's context menu. In the `Explorer` panel, two options are added :
+Adds options to the context menus of VSCode to open the native Windows Explorer context menu (also called "*shell context menu*").  
+You can use it for many things, one of them being to manage your projects using [TortoiseGit](https://tortoisegit.org/) or [TortoiseSVN](https://tortoisesvn.net/).
+
+![](https://raw.githubusercontent.com/electrotype/vscode-windows-explorer-context-menu/master/images/cm1.png) 
+
+
+In the `Explorer` panel, two options are added to the context menu :
 
 * *"☰ Context Menu - Selected"*  : Which opens the Windows Explorer context menu for the selected file or folder.
 * *"☰ Context Menu - Root"*  : Which opens the Windows Explorer context menu for the *root* of the project.
@@ -18,7 +21,7 @@ Of course this extension only works on Windows.
 There are three executables that can be used to actually open the native context menu. They all have their
 drawbacks and that's why we bundle all of them and let you choose which one to use.
 
-- *`AutohotkeyContextMenu.exe`* - Is the default. The *"Properties"* option of the open menu doesn't seem to work.
+- *`AutohotkeyContextMenu.exe`* - Is the default executable. The *"Properties"* option of the open menu doesn't seem to work.
 
 - *`Context.exe`* - The *"Properties"* option of the open menu doesn't seem to work.
 
@@ -53,11 +56,5 @@ The source is provided in file *`executables/AutohotkeyContextMenu.ahk`*.
 (c) 2013 vkalviss
 
 ----------------------
-
-![](https://raw.githubusercontent.com/electrotype/vscode-windows-explorer-context-menu/master/images/cm1.png)
-
-#==>
-
-![](https://raw.githubusercontent.com/electrotype/vscode-windows-explorer-context-menu/master/images/cm2.png)
 
 

@@ -1,8 +1,8 @@
 {
 	"name": "windows-explorer-context-menu",
 	"displayName": "Windows Explorer Context Menu",
-	"description": "Open Windows Explorer Context Menu on files and folders.",
-	"version": "1.0.1",
+	"description": "Opens Windows Explorer Context Menu on files and folders.",
+	"version": "1.0.2",
 	"publisher": "electrotype",
 	"icon": "images/windows.png",
 	"engines": {
@@ -16,7 +16,14 @@
 		"url": "https://github.com/electrotype/vscode-windows-explorer-context-menu"
 	},
 	"homepage": "https://github.com/electrotype/vscode-windows-explorer-context-menu",
-	"keywords": [],
+	"keywords": [
+		"windows",
+		"menu",
+		"context menu",
+		"shell",
+		"TortoiseGit",
+		"TortoiseSVN"
+	],
 	"activationEvents": [
 		"onCommand:extension.windowsExplorerContextMenuCurrent",
 		"onCommand:extension.windowsExplorerContextMenu",
@@ -64,8 +71,8 @@
 					"type": [
 						"string"
 					],
-					"default": null,
-					"description": "The executable to use to open the context menu. Can be 'WinContextMenu_x86.exe' (default) or 'Context.exe'."
+					"default": "AutohotkeyContextMenu.exe",
+					"description": "The executable to use to open the context menu. Can be 'AutohotkeyContextMenu.exe', 'WinContextMenu_x86.exe' or 'Context.exe'."
 				}
 			}
 		}
