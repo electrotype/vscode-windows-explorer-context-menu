@@ -31,9 +31,6 @@ The valid values for this configuration are currently "`AutohotkeyContextMenu.ex
 
 Of course this extension only works on Windows.
 
-I may publish it to the [VSCode Marketplace](https://marketplace.visualstudio.com/VSCode)
-one day, but I first want to test it for a while. Please feel free to report any problem.
-
 ----------------------
 
 ## AutohotkeyContextMenu.exe
