@@ -4,7 +4,7 @@
 Adds options to the context menus of VSCode to open the native Windows Explorer context menu (also called "*shell context menu*").  
 You can use it for many things, one of them being to manage your projects using [TortoiseGit](https://tortoisegit.org/) or [TortoiseSVN](https://tortoisesvn.net/).
 
-![](https://raw.githubusercontent.com/electrotype/vscode-windows-explorer-context-menu/master/images/cm1.png) 
+![](https://raw.githubusercontent.com/electrotype/vscode-windows-explorer-context-menu/master/images/cm.png) 
 
 
 In the `Explorer` panel, two options are added to the context menu :
