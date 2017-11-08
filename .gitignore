@@ -1,4 +1,6 @@
+out
 node_modules
-bin
+.vscode-test/
+.vsix
 logs/*.*
 *.log
