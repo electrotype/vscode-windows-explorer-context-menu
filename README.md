@@ -7,7 +7,7 @@ You can use it for many things, one of them being to manage your projects using 
 ![](https://raw.githubusercontent.com/electrotype/vscode-windows-explorer-context-menu/master/images/cm.png) 
 
 
-In the `Explorer` panel, two options are added to the context menu :
+In the `Explorer` panel (and `Java Projects` panel, for those working with Java), two options are added to the context menu :
 
 * *"☰ Context Menu - Selected"*  : Which opens the Windows Explorer context menu for the selected file or folder.
 * *"☰ Context Menu - Root"*  : Which opens the Windows Explorer context menu for the *root* of the project.

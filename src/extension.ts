@@ -1,53 +1,21 @@
 import * as vscode from "vscode";
+import { getProjectRootPath, getAbsolutePathFromJavaProjectExplorerInfoParam } from "./utils";
 
-async function openContextMenu(fileUri, useRoot) {
-
-    let filePath;
-    if (!fileUri) {
-
+async function openContextMenu(pathFromEvent, useRoot) {
+    let filePath: string;
+    if (!pathFromEvent) {
         if (!useRoot) {
             return;
         }
-
-        if (!vscode.workspace || vscode.workspace.workspaceFolders === undefined || vscode.workspace.workspaceFolders === null) {
-            if (!vscode.workspace.rootPath) {
-                return;
-            }
-            filePath = vscode.workspace.rootPath;
-        } else {
-
-            if (vscode.workspace.workspaceFolders.length < 1) {
-                return;
-            }
-            filePath = vscode.workspace.workspaceFolders[vscode.workspace.workspaceFolders.length - 1].uri.fsPath;
-        }
+        filePath = getProjectRootPath(null);
 
     } else if (useRoot) {
+        filePath = getProjectRootPath(pathFromEvent);
 
-        // Old VSCode version (no multi-root workspace)?
-        if (!vscode.workspace || !vscode.workspace.workspaceFolders) {
-            filePath = vscode.workspace.rootPath;
-        } else {
-
-            // Find the parent root path
-            filePath = fileUri.fsPath.replace(/\\/g, "/");
-            let rootPath;
-            for (let workspaceFolder of vscode.workspace.workspaceFolders) {
-                let rootPathTemp = workspaceFolder.uri.fsPath.replace(/\\/g, "/");
-                if (filePath === rootPathTemp || filePath.startsWith(rootPathTemp + "/")) {
-                    rootPath = workspaceFolder.uri.fsPath;
-                    break;
-                }
-            }
-            if (!rootPath) {
-                return;
-            }
-            filePath = rootPath;
-
-        }
     } else {
-        filePath = fileUri.fsPath;
+        filePath = pathFromEvent;
     }
+    filePath = filePath.replace(/\//g, '\\');
 
     const config = vscode.workspace.getConfiguration('windowsExplorerContextMenu');
     let exeName = config.executable;
@@ -63,27 +31,40 @@ async function openContextMenu(fileUri, useRoot) {
 // this method is called when your extension is activated
 // your extension is activated the very first time the command is executed
 export function activate(context) {
-
-    // Open context menu on current file
+    // Open context menu on the current file
     let disposable = vscode.commands.registerCommand('extension.windowsExplorerContextMenuCurrent', function (fileUri) {
-        openContextMenu(fileUri, false);
+        openContextMenu(fileUri ? fileUri.fsPath : null, false);
     });
     context.subscriptions.push(disposable, false);
 
-    // Open context menu on selected file/folder
+    // Open context menu on the selected file/folder
     disposable = vscode.commands.registerCommand('extension.windowsExplorerContextMenu', function (fileUri) {
-        openContextMenu(fileUri, false);
+        openContextMenu(fileUri ? fileUri.fsPath : null, false);
     });
     context.subscriptions.push(disposable);
 
-    // Open context menu on root folder
+    // Open context menu on the root folder
     disposable = vscode.commands.registerCommand('extension.windowsExplorerContextMenuRoot', function (fileUri) {
-        openContextMenu(fileUri, true);
+        openContextMenu(fileUri ? fileUri.fsPath : null, true);
     });
     context.subscriptions.push(disposable);
 
+    // Open context menu on the current file - "Java Projets" section
+    disposable = vscode.commands.registerCommand('extension.windowsExplorerContextMenuCurrentJavaProjectExplorer', function (info) {
+        let path = getAbsolutePathFromJavaProjectExplorerInfoParam(info);
+        openContextMenu(path, false);
+    });
+
+    // Open context menu on the root folder - "Java Projets" section
+    disposable = vscode.commands.registerCommand('extension.windowsExplorerContextMenuRootJavaProjectExplorer', function (info) {
+        let path = getAbsolutePathFromJavaProjectExplorerInfoParam(info);
+        openContextMenu(path, true);
+    });
+
+    context.subscriptions.push(disposable);
 }
 
 // this method is called when your extension is deactivated
 export function deactivate() {
+    // nothing required
 }

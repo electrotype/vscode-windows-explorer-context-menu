@@ -2,11 +2,11 @@
     "name": "windows-explorer-context-menu",
     "displayName": "Windows Explorer Context Menu",
     "description": "Opens Windows Explorer Context Menu on files and folders.",
-    "version": "2.0.0",
+    "version": "2.1.0",
     "publisher": "electrotype",
     "icon": "images/windows.png",
     "engines": {
-        "vscode": "^1.17.0"
+        "vscode": "^1.49.0"
     },
     "categories": [
         "Other"
@@ -27,7 +27,9 @@
     "activationEvents": [
         "onCommand:extension.windowsExplorerContextMenuCurrent",
         "onCommand:extension.windowsExplorerContextMenu",
-        "onCommand:extension.windowsExplorerContextMenuRoot"
+        "onCommand:extension.windowsExplorerContextMenuRoot",
+        "onCommand:extension.windowsExplorerContextMenuCurrentJavaProjectExplorer",
+        "onCommand:extension.windowsExplorerContextMenuRootJavaProjectExplorer"
     ],
     "main": "./out/extension",
     "scripts": {
@@ -50,6 +52,14 @@
             {
                 "command": "extension.windowsExplorerContextMenuRoot",
                 "title": "☰ Context Menu - Root"
+            },
+            {
+                "command": "extension.windowsExplorerContextMenuCurrentJavaProjectExplorer",
+                "title": "☰ Context Menu - Selected"
+            },
+            {
+                "command": "extension.windowsExplorerContextMenuRootJavaProjectExplorer",
+                "title": "☰ Context Menu - Root"
             }
         ],
         "menus": {
@@ -68,6 +78,18 @@
                     "command": "extension.windowsExplorerContextMenuCurrent",
                     "group": "navigation@1"
                 }
+            ],
+            "view/item/context": [
+                {
+                    "command": "extension.windowsExplorerContextMenuCurrentJavaProjectExplorer",
+                    "when": "view == javaProjectExplorer",
+                    "group": "navigation@1"
+                },
+                {
+                    "command": "extension.windowsExplorerContextMenuRootJavaProjectExplorer",
+                    "when": "view == javaProjectExplorer",
+                    "group": "navigation@2"
+                }
             ]
         },
         "configuration": {
@@ -85,6 +107,8 @@
         }
     },
     "devDependencies": {
-        "vscode": "1.1.6"
+        "typescript": "^4.0.3",
+        "vscode": "^1.1.6",
+        "@types/node": "^7.0.43"
     }
 }
