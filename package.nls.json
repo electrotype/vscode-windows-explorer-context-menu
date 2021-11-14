@@ -1,0 +1,7 @@
+{
+    "Context_Menu": "☰ Context Menu",
+    "Context_Menu_Selected": "☰ Context Menu - Selected",
+    "Context_Menu_Root": "☰ Context Menu - Root",
+    "Context_Menu_Setting_title": "Windows Explorer Context Menu configuration",
+    "Context_Menu_Setting_executable": "The executable to use to open the context menu. Can be `AutohotkeyContextMenu.exe`, `WinContextMenu_x86.exe` or `Context.exe`."
+}
