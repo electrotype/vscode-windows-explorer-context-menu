@@ -66,30 +66,30 @@
         "menus": {
             "explorer/context": [
                 {
-                    "command": "extension.windowsExplorerContextMenu",
-                    "group": "navigation@1"
+                    "command": "extension.windowsExplorerContextMenuRoot",
+                    "group": "navigation@0"
                 },
                 {
-                    "command": "extension.windowsExplorerContextMenuRoot",
-                    "group": "navigation@2"
+                    "command": "extension.windowsExplorerContextMenu",
+                    "group": "navigation@0"
                 }
             ],
             "editor/context": [
                 {
                     "command": "extension.windowsExplorerContextMenuCurrent",
-                    "group": "navigation@1"
+                    "group": "navigation@0"
                 }
             ],
             "view/item/context": [
                 {
                     "command": "extension.windowsExplorerContextMenuCurrentJavaProjectExplorer",
                     "when": "view == javaProjectExplorer",
-                    "group": "navigation@1"
+                    "group": "navigation@0"
                 },
                 {
                     "command": "extension.windowsExplorerContextMenuRootJavaProjectExplorer",
                     "when": "view == javaProjectExplorer",
-                    "group": "navigation@2"
+                    "group": "navigation@0"
                 }
             ]
         },
