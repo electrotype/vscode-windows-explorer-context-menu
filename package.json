@@ -22,7 +22,8 @@
         "context menu",
         "shell",
         "TortoiseGit",
-        "multi-root ready"
+        "multi-root ready",
+        "菜单"
     ],
     "activationEvents": [
         "onCommand:extension.windowsExplorerContextMenuCurrent",
@@ -43,23 +44,23 @@
         "commands": [
             {
                 "command": "extension.windowsExplorerContextMenuCurrent",
-                "title": "☰ Context Menu"
+                "title": "%Context_Menu%"
             },
             {
                 "command": "extension.windowsExplorerContextMenu",
-                "title": "☰ Context Menu - Selected"
+                "title": "%Context_Menu_Selected%"
             },
             {
                 "command": "extension.windowsExplorerContextMenuRoot",
-                "title": "☰ Context Menu - Root"
+                "title": "%Context_Menu_Root%"
             },
             {
                 "command": "extension.windowsExplorerContextMenuCurrentJavaProjectExplorer",
-                "title": "☰ Context Menu - Selected"
+                "title": "%Context_Menu_Selected%"
             },
             {
                 "command": "extension.windowsExplorerContextMenuRootJavaProjectExplorer",
-                "title": "☰ Context Menu - Root"
+                "title": "%Context_Menu_Root%"
             }
         ],
         "menus": {
@@ -94,17 +95,20 @@
         },
         "configuration": {
             "type": "object",
-            "title": "Windows Explorer Context Menu configuration",
+            "title": "%Context_Menu_Setting_title%",
             "properties": {
                 "windowsExplorerContextMenu.executable": {
                     "type": [
                         "string"
                     ],
                     "default": "AutohotkeyContextMenu.exe",
-                    "description": "The executable to use to open the context menu. Can be 'AutohotkeyContextMenu.exe', 'WinContextMenu_x86.exe' or 'Context.exe'."
+                    "markdownDescription": "%Context_Menu_Setting_executable%"
                 }
             }
         }
+    },
+    "dependencies": {
+        "vscode-nls": "5.0.0"
     },
     "devDependencies": {
         "typescript": "^4.0.3",
