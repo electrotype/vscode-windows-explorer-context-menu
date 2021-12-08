@@ -23,7 +23,10 @@
         "shell",
         "TortoiseGit",
         "multi-root ready",
-        "菜单"
+        "菜单",
+        "右键",
+        "系统",
+        "快捷"
     ],
     "activationEvents": [
         "onCommand:extension.windowsExplorerContextMenuCurrent",
@@ -98,8 +101,11 @@
             "title": "%Context_Menu_Setting_title%",
             "properties": {
                 "windowsExplorerContextMenu.executable": {
-                    "type": [
-                        "string"
+                    "type": "string",
+                    "enum": [
+                        "WinContextMenu_x86.exe",
+                        "AutohotkeyContextMenu.exe",
+                        "Context.exe"
                     ],
                     "default": "AutohotkeyContextMenu.exe",
                     "markdownDescription": "%Context_Menu_Setting_executable%"
