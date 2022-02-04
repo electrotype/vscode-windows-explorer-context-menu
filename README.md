@@ -12,11 +12,15 @@ In the `Explorer` panel (and `Java Projects` panel, for those working with Java)
 * *"☰ Context Menu - Selected"*  : Which opens the Windows Explorer context menu for the selected file or folder.
 * *"☰ Context Menu - Root"*  : Which opens the Windows Explorer context menu for the *root* of the project.
 
-Finally, in the context menu of the `Editor` panel, a simple *"☰ Context Menu"* option is added for the file currently open.
+Also, in the context menu of the `Editor` panel, a simple *"☰ Context Menu"* option is added for the file currently open.
+
+Since version *`3.0.0`*, this extension also supports projects ran inside WSL2! The configuration `windowsExplorerContextMenu.wsl2DriveLetter` is required in that case. See below for more information.
 
 Of course this extension only works on Windows.
 
 ## Configuration
+
+### *windowsExplorerContextMenu.executable*
 
 There are three executables that can be used to actually open the native context menu. They all have their
 drawbacks and that's why we bundle all of them and let you choose which one to use.
@@ -28,8 +32,13 @@ drawbacks and that's why we bundle all of them and let you choose which one to u
 - *`WinContextMenu_x86.exe`* - The menu doesn't open where the cursor is but at the *top-left* corner of the screen. If you use
 more than one monitor, it can even open on the wrong monitor.
 
-You can change the active executable using the "*`windowsExplorerContextMenu.executable`*" [user setting](https://code.visualstudio.com/Docs/customization/userandworkspace).  
-The valid values for this configuration are currently "`AutohotkeyContextMenu.exe`" (the default), "`WinContextMenu_x86.exe`" or "`Context.exe`".
+### *windowsExplorerContextMenu.wsl2DriveLetter*
+
+Required when using this extension on projects running inside WSL2. This would be the path to the drive letter on which
+you mapped the WSL2 Linux distribution root.
+
+For example, if you installed `Ubuntu-20.04` as the WSL2 Linux distribution, you could map "`\\wsl$\Ubuntu-20.04`" to the Windows "`X:`" drive letter. 
+You would then have to set the *`windowsExplorerContextMenu.wsl2DriveLetter`* configuration to "`X:`".
 
 ----------------------
 

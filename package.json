@@ -2,7 +2,7 @@
     "name": "windows-explorer-context-menu",
     "displayName": "Windows Explorer Context Menu",
     "description": "Opens Windows Explorer Context Menu on files and folders.",
-    "version": "2.3.0",
+    "version": "3.0.0",
     "publisher": "electrotype",
     "icon": "images/windows.png",
     "engines": {
@@ -26,7 +26,8 @@
         "菜单",
         "右键",
         "系统",
-        "快捷"
+        "快捷",
+        "WSL2"
     ],
     "activationEvents": [
         "onCommand:extension.windowsExplorerContextMenuCurrent",
@@ -109,6 +110,10 @@
                     ],
                     "default": "AutohotkeyContextMenu.exe",
                     "markdownDescription": "%Context_Menu_Setting_executable%"
+                },
+                "windowsExplorerContextMenu.wsl2DriveLetter": {
+                    "type": "string",
+                    "markdownDescription": "%Context_Menu_Setting_wsl2DriveLetter%"
                 }
             }
         }
