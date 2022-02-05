@@ -48,10 +48,15 @@ export function getAbsolutePathFromJavaProjectExplorerInfoParam(info) {
   let path: string = null;
   if (info && info.uri) {
     path = info.uri;
-    if (path.startsWith('file:///')) {
-      path = path.substring('file:///'.length);
-    } else if (path.startsWith('file:/')) {
-      path = path.substring('file:/'.length);
+    if (path.startsWith('file://')) {
+      path = path.substring('file://'.length);
+    } else if (path.startsWith('file:')) {
+      path = path.substring('file:'.length);
+    }
+
+    // Windows
+    if (path.match(/\/[a-zA-Z]:\//)) {
+      path = path.substring(1);
     }
   }
 

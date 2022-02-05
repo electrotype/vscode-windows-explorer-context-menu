@@ -2,7 +2,7 @@
     "name": "windows-explorer-context-menu",
     "displayName": "Windows Explorer Context Menu",
     "description": "Opens Windows Explorer Context Menu on files and folders.",
-    "version": "3.0.0",
+    "version": "3.1.0",
     "publisher": "electrotype",
     "icon": "images/windows.png",
     "engines": {
