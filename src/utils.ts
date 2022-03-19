@@ -62,3 +62,16 @@ export function getAbsolutePathFromJavaProjectExplorerInfoParam(info) {
 
   return path;
 }
+
+/**
+ * Return the path of the file in the active editor,
+ * or `null` if no editor is active.
+ */
+ export function getActiveEditorFilePath() {
+  if (!vscode.window.activeTextEditor) {
+    return null;
+  }
+
+  let path: string = vscode.window.activeTextEditor.document.uri.fsPath;
+  return path;
+}

@@ -1,5 +1,11 @@
 # VSCode - Windows Explorer Context Menu
 
+## Marketplace link
+
+[Windows Explorer Context Menu](https://marketplace.visualstudio.com/items?itemName=electrotype.windows-explorer-context-menu)
+
+
+## Description
 
 Adds options to the context menus of VSCode to open the native Windows Explorer context menu (also called "*shell context menu*").  
 You can use it for many things, one of them being to manage your projects using [TortoiseGit](https://tortoisegit.org/) or [TortoiseSVN](https://tortoisesvn.net/).

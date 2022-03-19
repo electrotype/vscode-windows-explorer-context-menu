@@ -2,6 +2,8 @@
     "Context_Menu": "☰ 系统文件菜单",
     "Context_Menu_Selected": "☰ 系统文件(夹)菜单 - 选中",
     "Context_Menu_Root": "☰ 系统文件(夹)菜单 - 根目录",
+    "Context_Menu_Selected_Java": "☰ 系统文件(夹)菜单 - Java - 选中",
+    "Context_Menu_Root_Java": "☰ 系统文件(夹)菜单 - Java - 根目录",
     "Context_Menu_Setting_title": "Windows 文件内容菜单配置",
     "Context_Menu_Setting_executable": "打开系统文件(夹)内容菜单的程序。可配置为 `AutohotkeyContextMenu.exe`, `WinContextMenu_x86.exe` 或者 `Context.exe`."
 }

@@ -2,7 +2,7 @@
     "name": "windows-explorer-context-menu",
     "displayName": "Windows Explorer Context Menu",
     "description": "Opens Windows Explorer Context Menu on files and folders.",
-    "version": "3.1.1",
+    "version": "3.2.0",
     "publisher": "electrotype",
     "icon": "images/windows.png",
     "engines": {
@@ -60,11 +60,11 @@
             },
             {
                 "command": "extension.windowsExplorerContextMenuCurrentJavaProjectExplorer",
-                "title": "%Context_Menu_Selected%"
+                "title": "%Context_Menu_Selected_Java%"
             },
             {
                 "command": "extension.windowsExplorerContextMenuRootJavaProjectExplorer",
-                "title": "%Context_Menu_Root%"
+                "title": "%Context_Menu_Root_Java%"
             }
         ],
         "menus": {
@@ -93,6 +93,12 @@
                 {
                     "command": "extension.windowsExplorerContextMenuRootJavaProjectExplorer",
                     "when": "view == javaProjectExplorer",
+                    "group": "navigation@0"
+                }
+            ],
+            "explorer/openEditors/context": [
+                {
+                    "command": "extension.windowsExplorerContextMenuCurrentOpenEditors",
                     "group": "navigation@0"
                 }
             ]

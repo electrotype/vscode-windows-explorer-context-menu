@@ -2,6 +2,9 @@
     "Context_Menu": "☰ Context Menu",
     "Context_Menu_Selected": "☰ Context Menu - Selected",
     "Context_Menu_Root": "☰ Context Menu - Root",
+    "Context_Menu_Selected_Java": "☰ Context Menu - Java - Selected",
+    "Context_Menu_Root_Java": "☰ Context Menu - Java - Root",
     "Context_Menu_Setting_title": "Windows Explorer Context Menu configuration",
-    "Context_Menu_Setting_executable": "The executable to use to open the context menu. Can be `AutohotkeyContextMenu.exe`, `WinContextMenu_x86.exe` or `Context.exe`."
+    "Context_Menu_Setting_executable": "The executable to use to open the context menu. Can be `AutohotkeyContextMenu.exe`, `WinContextMenu_x86.exe` or `Context.exe`.",
+    "Context_Menu_Setting_wsl2DriveLetter": "When using WSL2, this is the path to the drive letter on which you mapped the WSL2 Linux distribution root."
 }

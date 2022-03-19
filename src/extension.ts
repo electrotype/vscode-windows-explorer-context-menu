@@ -1,9 +1,10 @@
+import * as path from "path";
 import * as vscode from "vscode";
 import {
     getAbsolutePathFromJavaProjectExplorerInfoParam,
-    getProjectRootPath,
+    getActiveEditorFilePath,
+    getProjectRootPath
 } from "./utils";
-import * as path from "path";
 const execFile = require("child_process").execFile;
 
 async function openContextMenu(pathFromEvent, useRoot) {
@@ -52,7 +53,16 @@ export function activate(context) {
     let disposable = vscode.commands.registerCommand(
         "extension.windowsExplorerContextMenuCurrent",
         function (fileUri) {
-            openContextMenu(fileUri ? fileUri.fsPath : null, false);
+            let fsPath;
+            if(fileUri) {
+                fsPath = fileUri.fsPath;
+            } else {
+                // From the command palette: we need to get the
+                // current editor file path by ourself.
+                fsPath = getActiveEditorFilePath();
+            }
+
+            openContextMenu(fsPath, false);
         }
     );
     context.subscriptions.push(disposable, false);
@@ -61,6 +71,11 @@ export function activate(context) {
     disposable = vscode.commands.registerCommand(
         "extension.windowsExplorerContextMenu",
         function (fileUri) {
+            // TODO
+            // Once the ability to get the Explorer's selected files,
+            // we could manage this action triggered from the
+            // command palette!
+            // @see https://github.com/microsoft/vscode/issues/3553 
             openContextMenu(fileUri ? fileUri.fsPath : null, false);
         }
     );
@@ -83,6 +98,7 @@ export function activate(context) {
             openContextMenu(path, false);
         }
     );
+    context.subscriptions.push(disposable);
 
     // Open context menu on the root folder - "Java Projets" section
     disposable = vscode.commands.registerCommand(
@@ -92,7 +108,6 @@ export function activate(context) {
             openContextMenu(path, true);
         }
     );
-
     context.subscriptions.push(disposable);
 }
 
